@@ -7,9 +7,18 @@ if (!empty($_POST["submitButton"])) {
 //データベース接続
 try {
   $pdo = $dbh = new PDO('mysql:host=localhost;dbname=bbs-yt', "root1", "root1");
-} catch (PDOException $e) {
+} catch (PDOException $e) { //エラーを表示する
   echo $e->getMessage();
 }
+
+//データベースからデータを取り出す(sql文から取り出す)
+
+$sql = "SELECT `id`, `username`, `comment`, `postDate` FROM `bbs-table`";
+$pdo->query($sql);
+
+//DBの接続を閉じる
+$pdo = null;
+
 ?>
 
 <!DOCTYPE html>
