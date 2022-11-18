@@ -11,8 +11,11 @@
 
 <body>
   <h1 class="title">掲示板application</h1>
+  <hr>
   <div class="boardWrapper">
+    <form class="formWrapper" method="POST">
 
+    </form>
   </div>
 </body>
 

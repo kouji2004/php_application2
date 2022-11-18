@@ -17,3 +17,8 @@ body {
   border: 1px solid black;
   margin-bottom: 20px;
 }
+
+.formWrapper {
+  padding: 16px;
+  margin-left: 20px;
+}
