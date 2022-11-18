@@ -13,6 +13,18 @@
   <h1 class="title">掲示板application</h1>
   <hr>
   <div class="boardWrapper">
+    <section>
+      <article>
+        <div class="wrapper">
+          <div class="nameArea">
+            <span>名前:</span>
+            <p class="username">miura</p>
+            <time>:2022/11/18</time>
+          </div>
+          <p class="comment">手書きコメント</p>
+        </div>
+      </article>
+    </section>
     <form class="formWrapper" method="POST">
       <div>
         <input type="submit" value="書き込む">

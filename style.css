@@ -1,3 +1,4 @@
+/* 初期設定 */
 body {
   background-color: #c6daf1;
 }
@@ -8,6 +9,7 @@ body {
 }
 
 
+/* フォーム入力画面 */
 .boardWrapper {
   /* background-color: #b3eeb3; */
   background-color: #f3eded;
@@ -27,4 +29,25 @@ body {
   margin-top: 10px;
   width: 500px;
   height: 90px;
+}
+
+/* コメント情報を表示する */
+section {
+  padding: 0px 10px;
+}
+
+section .username {
+  color: green !important;
+  font-weight: 700;
+}
+
+section .nameArea {
+  display: flex;
+  align-items: center;
+  margin-bottom: -14px;
+}
+
+section .comment {
+  margin-top: 0;
+  margin-left: 20px;
 }
