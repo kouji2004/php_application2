@@ -1,10 +1,14 @@
 <?php
 $comment_array = array();
 
-
+//フォームを打ち込んだとき
 if (!empty($_POST["submitButton"])) {
-  echo $_POST["username"];
-  echo $_POST["comment"];
+
+  $postDate = date("Y-m-d H:i:s");
+
+  $stmt = $pdo->prepare("INSERT INTO `bbs-table` ( `username`, `comment`, `postDate`) VALUES ('username', 'comment', $postDate);");
+  $stmt->bindParam(':name', $name);
+  $stmt->bindParam(':value', $value);
 }
 
 //データベース接続
