@@ -46,9 +46,9 @@ $pdo = null;
             <div class="nameArea">
               <span>名前:</span>
               <p class="username"><?php echo $comment["username"] ?></p>
-              <time>:2022/11/18</time>
+              <time>:<?php echo $comment["postDate"] ?></time>
             </div>
-            <p class="comment">手書きコメント</p>
+            <p class="comment"><?php echo $comment["comment"] ?></p>
           </div>
         </article>
       <?php endforeach ?>
