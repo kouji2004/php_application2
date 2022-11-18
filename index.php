@@ -20,7 +20,7 @@
         <input type="text" name="username">
       </div>
       <div>
-        <textarea ></textarea>
+        <textarea class="commentTextArea"></textarea>
       </div>
     </form>
   </div>
