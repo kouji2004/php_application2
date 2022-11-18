@@ -5,7 +5,11 @@ if (!empty($_POST["submitButton"])) {
 }
 
 //データベース接続
-$pdo = $dbh = new PDO('mysql:host=localhost;dbname=bbs-yt', "root1", "root1");
+try {
+  $pdo = $dbh = new PDO('mysql:host=localhost;dbname=bbs-yt', "root1", "root1");
+} catch (PDOException $e) {
+  echo $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
