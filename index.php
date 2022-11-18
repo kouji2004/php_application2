@@ -10,7 +10,10 @@
 </head>
 
 <body>
+  <h1 class="title">掲示板application</h1>
+  <div class="boardWrapper">
 
+  </div>
 </body>
 
 </html>

@@ -6,3 +6,14 @@ body {
   text-align: center;
   font-size: 34px;
 }
+
+
+.boardWrapper {
+  /* background-color: #b3eeb3; */
+  background-color: #f3eded;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
