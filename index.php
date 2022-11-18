@@ -1,15 +1,7 @@
 <?php
 $comment_array = array();
-
-//フォームを打ち込んだとき
-if (!empty($_POST["submitButton"])) {
-
-  $postDate = date("Y-m-d H:i:s");
-
-  $stmt = $pdo->prepare("INSERT INTO `bbs-table` ( `username`, `comment`, `postDate`) VALUES ('username', 'comment', $postDate);");
-  $stmt->bindParam(':name', $name);
-  $stmt->bindParam(':value', $value);
-}
+$pdo = null;
+$stmt = null;
 
 //データベース接続
 try {
@@ -17,6 +9,21 @@ try {
 } catch (PDOException $e) { //エラーを表示する
   echo $e->getMessage();
 }
+
+//フォームを打ち込んだとき
+if (!empty($_POST["submitButton"])) {
+
+  $postDate = date("Y-m-d H:i:s");
+
+  $stmt = $pdo->prepare("INSERT INTO `bbs-table` ( `username`, `comment`, `postDate`) VALUES (:username, :comment, :postDate);");
+  $stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);
+  $stmt->bindParam(':comment', $_POST['comment'], PDO::PARAM_STR);
+  $stmt->bindParam(':postDate', $postDate, PDO::PARAM_STR);
+
+  $stmt->execute();
+}
+
+
 
 //データベースからデータを取り出す(sql文から取り出す)
 
