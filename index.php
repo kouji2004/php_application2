@@ -3,6 +3,9 @@ if (!empty($_POST["submitButton"])) {
   echo $_POST["username"];
   echo $_POST["comment"];
 }
+
+//データベース接続
+$pdo = $dbh = new PDO('mysql:host=localhost;dbname=bbs-yt', "root1", "root1");
 ?>
 
 <!DOCTYPE html>
