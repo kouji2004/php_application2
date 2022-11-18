@@ -14,7 +14,14 @@
   <hr>
   <div class="boardWrapper">
     <form class="formWrapper" method="POST">
-
+      <div>
+        <input type="submit" value="書き込む">
+        <label for="">名前</label>
+        <input type="text" name="username">
+      </div>
+      <div>
+        <textarea ></textarea>
+      </div>
     </form>
   </div>
 </body>
