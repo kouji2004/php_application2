@@ -3,6 +3,9 @@ $comment_array = array();
 $pdo = null;
 $stmt = null;
 
+
+date_default_timezone_set("Asia/Tokyo");
+
 //データベース接続
 try {
   $pdo = $dbh = new PDO('mysql:host=localhost;dbname=bbs-yt', "root1", "root1");
