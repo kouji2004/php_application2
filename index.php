@@ -2,7 +2,7 @@
 $comment_array = array();
 $pdo = null;
 $stmt = null;
-
+$error_messages = array();
 
 date_default_timezone_set("Asia/Tokyo");
 
@@ -16,25 +16,27 @@ try {
 //フォームを打ち込んだとき
 if (!empty($_POST["submitButton"])) {
 
-  //名前のチェック
+  //名前のチェック(バリデーション機能)
   if (empty($_POST["username"])) {
     echo "名前を入力してください" . "<br>";
+    $error_messages["username"] = "名前を入力してください";
   }
   if (empty($_POST["comment"])) {
     echo "コメントを入力してください" . "<br>";
+    $error_messages["comment"] = "コメントを入力してください";
   }
 
 
+  if (empty($error_messages)) {
+    $postDate = date("Y-m-d H:i:s");
 
+    $stmt = $pdo->prepare("INSERT INTO `bbs-table` ( `username`, `comment`, `postDate`) VALUES (:username, :comment, :postDate);");
+    $stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);
+    $stmt->bindParam(':comment', $_POST['comment'], PDO::PARAM_STR);
+    $stmt->bindParam(':postDate', $postDate, PDO::PARAM_STR);
 
-  $postDate = date("Y-m-d H:i:s");
-
-  $stmt = $pdo->prepare("INSERT INTO `bbs-table` ( `username`, `comment`, `postDate`) VALUES (:username, :comment, :postDate);");
-  $stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);
-  $stmt->bindParam(':comment', $_POST['comment'], PDO::PARAM_STR);
-  $stmt->bindParam(':postDate', $postDate, PDO::PARAM_STR);
-
-  $stmt->execute();
+    $stmt->execute();
+  }
 }
 
 
