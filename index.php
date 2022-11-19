@@ -16,6 +16,17 @@ try {
 //フォームを打ち込んだとき
 if (!empty($_POST["submitButton"])) {
 
+  //名前のチェック
+  if (empty($_POST["username"])) {
+    echo "名前を入力してください" . "<br>";
+  }
+  if (empty($_POST["comment"])) {
+    echo "コメントを入力してください" . "<br>";
+  }
+
+
+
+
   $postDate = date("Y-m-d H:i:s");
 
   $stmt = $pdo->prepare("INSERT INTO `bbs-table` ( `username`, `comment`, `postDate`) VALUES (:username, :comment, :postDate);");
