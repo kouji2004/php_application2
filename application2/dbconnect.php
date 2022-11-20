@@ -1,6 +1,6 @@
 <?php
-
 require_once './env.php';
+ini_set('display_errors', true); //エラーの内容を表示する
 
 function connect()
 {
