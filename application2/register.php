@@ -24,10 +24,10 @@ if ($password !== $password_conf) {
 
 if (count($err) == 0) {
   //エラーが0の場合　ユーザを登録する処理
+  UserLogic::createUser();
 }
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
