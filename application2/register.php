@@ -22,6 +22,11 @@ if ($password !== $password_conf) {
   $err[] = "確認用パスワードと異なっています。";
 }
 
+if (count($err) == 0) {
+  //エラーが0の場合　ユーザを登録する処理
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -34,7 +39,13 @@ if ($password !== $password_conf) {
 </head>
 
 <body>
-  <p>ユーザ登録が完了しました</p>
+  <?php if (count($err) > 0) : ?>
+    <?php foreach ($err as $e) : ?>
+      <p><?php echo $e ?></p>
+    <?php endforeach ?>
+  <?php else : ?>
+    <p>ユーザ登録が完了しました</p>
+  <?php endif ?>
   <a href="./signup_form.php">戻る</a>
 </body>
 
