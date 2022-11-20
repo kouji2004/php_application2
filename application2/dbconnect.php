@@ -2,6 +2,12 @@
 require_once './env.php';
 ini_set('display_errors', true); //エラーの内容を表示する
 
+//⓵ユーザ登録フォームの作成
+//⓶登録完了画面の作成
+//⓷ユーザ登録ロジックの作成
+//⓸ユーザ登録機能の実装
+
+
 function connect()
 {
   $host = DB_HOST;
